@@ -142,7 +142,9 @@ export default function AdvantagesBlock(props) {
                 {translation.services.map((service, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-start bg-white p-6 rounded-lg shadow-md"
+                        className={`flex flex-col items-start bg-white p-6 rounded-lg shadow-md ${
+                            index === translation.services.length - 1 ? "lg:col-span-1 lg:col-start-2" : ""
+                        }`}
                     >
                         <img src={service.icon} alt={service.title} className="w-12 h-12 mb-4" />
                         <h3 className="text-[#911D16] font-bold text-[18px] mb-2">
