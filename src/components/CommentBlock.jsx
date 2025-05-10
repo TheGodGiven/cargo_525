@@ -1,9 +1,21 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 
 export default function CommentBlock(props) {
+    const [activeSlide, setActiveSlide] = useState(1);
+    const sliderRef = useRef(null);
+    
+    useEffect(() => {
+        if (sliderRef.current) {
+            setTimeout(() => {
+                sliderRef.current.slickGoTo(1);
+                setActiveSlide(1);
+            }, 100);
+        }
+    }, []);
+    
     const translations = {
         ru: {
             title: "ОТЗЫВЫ",
@@ -11,7 +23,7 @@ export default function CommentBlock(props) {
                 {
                     text: "«Результат дико порадовал, друзья были в восторге»",
                     description:
-                        "Заказала капкейки, как подарок на новый год. Делать заказ было легко и приятно, ну а результат дико порадовал, друзья были в восторге. И оформление, и на вкус капкейки были просто замечательные. Обязательно буду заказывать еще! Уже строго планы, чтобы попробовать все начинки. Они восхитительны! Даже кушать было жалко, такая красота!)",
+                        "«Заказала капкейки, как подарок на новый год. Делать заказ было легко и приятно,ну а результат дико порадовал, друзья были в восторге. И оформление, и на вкус капкейки были просто замечательные. Обязательно буду заказывать еще!) Уже строю планы, чтобы попробовать все начинки. Они восхитительны! Даже кушать было жалко, такая красота!)",
                     author: "Ирина Ларионова",
                     location: "Санкт-Петербург",
                 },
@@ -61,11 +73,11 @@ export default function CommentBlock(props) {
 
     const translation = translations[props.lg] || translations["ru"];
 
-    // Кастомные кнопки для десктопной версии
+    // Кастомные кнопки для десктопной версии (теперь внизу)
     const CustomPrevArrowDesktop = ({ onClick }) => (
         <button
             onClick={onClick}
-            className="absolute left-[-50px] top-1/2 transform -translate-y-1/2 bg-[#911D16] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#b22222]"
+            className="absolute bottom-[-60px] left-[calc(50%-60px)] transform bg-[#911D16] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#b22222] z-10"
         >
             &#8249;
         </button>
@@ -74,7 +86,7 @@ export default function CommentBlock(props) {
     const CustomNextArrowDesktop = ({ onClick }) => (
         <button
             onClick={onClick}
-            className="absolute right-[-50px] top-1/2 transform -translate-y-1/2 bg-[#911D16] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#b22222]"
+            className="absolute bottom-[-60px] right-[calc(50%-60px)] transform bg-[#911D16] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-[#b22222] z-10"
         >
             &#8250;
         </button>
@@ -99,7 +111,6 @@ export default function CommentBlock(props) {
     );
 
     const desktopSettings = {
-        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -107,8 +118,12 @@ export default function CommentBlock(props) {
         centerMode: true,
         centerPadding: "0px",
         arrows: true,
+        initialSlide: 1,
         prevArrow: <CustomPrevArrowDesktop />,
         nextArrow: <CustomNextArrowDesktop />,
+        beforeChange: (current, next) => setActiveSlide(next),
+        adaptiveHeight: false,
+        variableWidth: false,
     };
 
     const mobileSettings = {
@@ -118,8 +133,10 @@ export default function CommentBlock(props) {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
+        initialSlide: 1,
         prevArrow: <CustomPrevArrowMobile />,
         nextArrow: <CustomNextArrowMobile />,
+        beforeChange: (current, next) => setActiveSlide(next),
     };
 
     return (
@@ -128,25 +145,30 @@ export default function CommentBlock(props) {
                 <h2 className="text-center text-[#911D16] font-bold text-[36px] mb-12">
                     {translation.title}
                 </h2>
-                <Slider {...desktopSettings} className="max-w-[1200px] mx-auto">
-                    {translation.comments.map((comment, index) => (
-                        <div
-                            key={index}
-                            className={`flex flex-col items-center bg-white p-6 rounded-lg shadow-md text-center transition-opacity duration-300 ${
-                                index === 1 ? "opacity-100" : "opacity-50"
-                            }`}
-                        >
-                            <p className="text-[#911D16] text-[24px] font-bold mb-4">
-                                {comment.text}
-                            </p>
-                            <p className="text-gray-700 text-[16px] mb-6">
-                                {comment.description}
-                            </p>
-                            <p className="text-gray-900 font-bold">{comment.author}</p>
-                            <p className="text-gray-500">{comment.location}</p>
-                        </div>
-                    ))}
-                </Slider>
+                <div className="max-w-[1200px] mx-auto relative pb-20">
+                    <Slider ref={sliderRef} {...desktopSettings}>
+                        {translation.comments.map((comment, index) => (
+                            <div key={index} className="px-3 py-2 outline-none items-stretch h-full" style={{ height: 'inherit' }}>
+                                <div 
+                                    className={`flex flex-col items-center bg-white border border-[#E0E0E0] p-6 rounded-lg shadow-md text-center mx-3 transition-all duration-300 h-full ${
+                                        activeSlide === index ? 'opacity-100 scale-100' : 'opacity-50 scale-95'
+                                    }`}
+                                >
+                                    <p className="text-[#911D16] text-[24px] font-bold mb-4">
+                                        {comment.text}
+                                    </p>
+                                    <p className="text-gray-700 text-[16px] mb-6 flex-grow">
+                                        {comment.description}
+                                    </p>
+                                    <div className="mt-auto">
+                                        <p className="text-gray-900 font-bold">{comment.author}</p>
+                                        <p className="text-gray-500">{comment.location}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
             </div>
             <div className="block md:hidden py-8 px-4 bg-white relative">
                 <h2 className="text-center text-[#911D16] font-bold text-[24px] mb-6">
@@ -156,16 +178,18 @@ export default function CommentBlock(props) {
                     {translation.comments.map((comment, index) => (
                         <div
                             key={index}
-                            className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md text-center"
+                            className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md text-center h-full"
                         >
                             <p className="text-[#911D16] text-[20px] font-bold mb-3">
                                 {comment.text}
                             </p>
-                            <p className="text-gray-700 text-[14px] mb-4">
+                            <p className="text-gray-700 text-[14px] mb-4 flex-grow">
                                 {comment.description}
                             </p>
-                            <p className="text-gray-900 font-bold">{comment.author}</p>
-                            <p className="text-gray-500">{comment.location}</p>
+                            <div className="mt-auto">
+                                <p className="text-gray-900 font-bold">{comment.author}</p>
+                                <p className="text-gray-500">{comment.location}</p>
+                            </div>
                         </div>
                     ))}
                 </Slider>

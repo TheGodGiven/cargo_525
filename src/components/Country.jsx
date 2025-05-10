@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import KZFLag from "../assets/KZFlag.png";
 import RUFlag from "../assets/RUFlag.png";
@@ -59,6 +59,7 @@ export default function Country(props) {
     const currentCountries = countries[props.lg] || countries["ru"];
     const translation = translations[props.lg] || translations["ru"];
     const [selectedCountry, setSelectedCountry] = useState(currentCountries[0]);
+    const [sliderIndex, setSliderIndex] = useState(0);
 
     const handleCountryChange = (country) => {
         setSelectedCountry(country);
@@ -71,14 +72,21 @@ export default function Country(props) {
         slidesToShow: 1,
         slidesToScroll: 1,
         adaptiveHeight: true,
-        afterChange: (index) => handleCountryChange(currentCountries[index]),
+        afterChange: (index) => {
+            handleCountryChange(currentCountries[index]);
+            setSliderIndex(index);
+        },
         arrows: false,
     };
+
+    useEffect(() => {
+        setSelectedCountry(currentCountries[sliderIndex]);
+    }, [props.lg]);
 
     return (
         <>
             <div
-                className="hidden md:flex flex-col items-center py-10 px-4 pb-20 mt-5"
+                className="hidden md:flex flex-col items-center py-10 px-4 pb-20 mt-10"
                 style={{
                     backgroundImage: `url(${CountryBG})`,
                     backgroundSize: "cover",
@@ -104,17 +112,19 @@ export default function Country(props) {
                             ))}
                         </Slider>
                     </div>
-                    <div className="p-6 rounded-md border border-white shadow-md w-1/2 self-stretch">
-                        <h3 className="font-bold text-white text-[24px]">{selectedCountry.city}</h3>
-                        <p className="text-[16px] mt-4 text-white">
-                            {translation.description}
-                        </p>
+                    <div className="w-1/2 self-stretch pb-2">
+                        <div className="p-6 rounded-md border border-white shadow-md h-full">
+                            <h3 className="font-bold text-white text-[24px]">{selectedCountry.city}</h3>
+                            <p className="text-[16px] mt-4 text-white">
+                                {translation.description}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div
-                className="flex md:hidden flex-col items-center py-6 px-4"
+                className="flex md:hidden flex-col items-center py-6 px-4 mt-10"
                 style={{
                     backgroundImage: `url(${CountryBG})`,
                     backgroundSize: "cover",
@@ -140,7 +150,7 @@ export default function Country(props) {
                     </Slider>
                 </div>
 
-                <div className="bg-white p-4 rounded-md shadow-md mt-4 w-full max-w-[414px]">
+                <div className="bg-white p-4 rounded-md shadow-md mt-8 w-full max-w-[414px]">
                     <h3 className="text-[#911D16] font-bold text-[18px]">{selectedCountry.city}</h3>
                     <p className="text-[14px] mt-2 text-gray-700">
                         {translation.description}
