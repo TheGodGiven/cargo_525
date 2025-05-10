@@ -22,7 +22,7 @@ function App() {
             <Routes>
                 <Route path="/login" element={<AuthPage />} />
                 <Route path="/" element={
-                    <div style={{ fontFamily: "Montserrat" }} className="pb-20 relative">
+                    <div style={{ fontFamily: "Montserrat" }} className="relative">
                         <Header lg={lang} change={handleChange} />
                         <Calc lg={lang} />
                         <InfoBlock lg={lang} />

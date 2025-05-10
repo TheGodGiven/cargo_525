@@ -58,9 +58,8 @@ export default function Footer({ lg }) {
 
     return (
         <>
-            {/* Десктопная версия */}
-            <div className="hidden md:flex bg-black text-white py-8 px-4 max-w-[1200px] mx-auto">
-                {/* Навигация */}
+            <div className="hidden md:block bg-black">
+                <div className="flex text-white py-8 px-4 max-w-[1200px] mx-auto">
                 <div className="flex-1">
                     <h3 className="font-bold mb-4">{translation.navigation}</h3>
                     <ul>
@@ -73,8 +72,6 @@ export default function Footer({ lg }) {
                         ))}
                     </ul>
                 </div>
-
-                {/* Тех Поддержка */}
                 <div className="flex-1">
                     <h3 className="font-bold mb-4">{translation.support}</h3>
                     <ul>
@@ -88,7 +85,6 @@ export default function Footer({ lg }) {
                     </ul>
                 </div>
 
-                {/* Соц сети */}
                 <div className="flex-1">
                     <h3 className="font-bold mb-4">{translation.social}</h3>
                     <ul>
@@ -108,67 +104,68 @@ export default function Footer({ lg }) {
                     </ul>
                 </div>
 
-                {/* QR Code */}
                 <div className="flex flex-col items-center">
                     <div className="w-24 h-24 bg-gray-200 mb-4">
-                        {/* QR-код будет добавлен здесь */}
                     </div>
                     <p className="text-center whitespace-pre-line">{translation.qrText}</p>
+                </div>
                 </div>
             </div>
+            <div className="block md:hidden bg-black text-white py-8 px-8">
+                <div>
+                    <div className="flex justify-between">
+                        <div className="mb-8">
+                            <h3 className="font-bold mb-4">{translation.navigation}</h3>
+                            <ul>
+                                {translation.links.map((link, index) => (
+                                    <li key={index} className="mb-2">
+                                        <a href={link.url} className="hover:underline">
+                                            {link.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-            {/* Мобильная версия */}
-            <div className="block md:hidden bg-black text-white py-8 px-4">
-                <div className="mb-8">
-                    <h3 className="font-bold mb-4">{translation.navigation}</h3>
-                    <ul>
-                        {translation.links.map((link, index) => (
-                            <li key={index} className="mb-2">
-                                <a href={link.url} className="hover:underline">
-                                    {link.label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="mb-8">
-                    <h3 className="font-bold mb-4">{translation.support}</h3>
-                    <ul>
-                        {translation.supportContacts.map((contact, index) => (
-                            <li key={index} className="mb-2">
-                                <a href={`tel:${contact}`} className="hover:underline">
-                                    {contact}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="mb-8">
-                    <h3 className="font-bold mb-4">{translation.social}</h3>
-                    <ul>
-                        {translation.socialContacts.map((social, index) => (
-                            <li key={index} className="mb-2 flex items-center">
-                                <img src={social.icon} alt={social.label} className="w-5 h-5 mr-2" />
-                                <a
-                                    href={social.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:underline"
-                                >
-                                    {social.label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="flex flex-col items-center">
-                    <div className="w-24 h-24 bg-gray-200 mb-4">
-                        {/* QR-код будет добавлен здесь */}
+                        <div className="mb-8">
+                            <h3 className="font-bold mb-4">{translation.support}</h3>
+                            <ul>
+                                {translation.supportContacts.map((contact, index) => (
+                                    <li key={index} className="mb-2">
+                                        <a href={`tel:${contact}`} className="hover:underline">
+                                            {contact}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
-                    <p className="text-center whitespace-pre-line">{translation.qrText}</p>
+                    <div className="flex justify-between"> 
+                        <div className="mb-8">
+                            <h3 className="font-bold mb-4">{translation.social}</h3>
+                            <ul>
+                                {translation.socialContacts.map((social, index) => (
+                                    <li key={index} className="mb-2 flex items-center">
+                                        <img src={social.icon} alt={social.label} className="w-5 h-5 mr-2" />
+                                        <a
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="hover:underline"
+                                        >
+                                            {social.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <div className="w-24 h-24 bg-gray-200 mb-4">
+                            </div>
+                            <p className="text-center whitespace-pre-line">{translation.qrText}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
