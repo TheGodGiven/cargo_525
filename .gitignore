@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.env
+cargo_525Server/node_modules
+cargo_525Server/.env
 dist
 dist-ssr
 *.local
