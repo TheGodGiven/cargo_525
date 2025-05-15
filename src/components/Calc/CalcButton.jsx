@@ -10,17 +10,19 @@ export default function CalcButton (props) {
                 setText(`Сумма: ${props.summa} тенге`)
             } else if (props.lang === "kz") {
                 setText(`Багасы: ${props.summa} теңге`)
-            } else {
+            } else if (props.lang === "en") {
                 setText(`Sum: ${props.summa} tenge`)
-            }
+            }else
+                setText(`和: ${props.summa} 坚戈`)
         } else {
             if (props.lang === "ru") {
                 setText("Рассчитать стоимость")
             } else if (props.lang === "kz") {
                 setText("Құнды есептеңіз")
-            } else {
+            } else if (props.lang === "en") {
                 setText("Calculate cost")
-            }
+            }else
+                setText("计算成本")
         }
     }, [props.summa, props.lang])
 

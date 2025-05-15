@@ -52,6 +52,52 @@ export default function Footer({ lg }) {
                 { icon: TikTokIcon, label: "@cargo525", url: "https://tiktok.com/@cargo525" },
             ],
         },
+        kz: {
+            navigation: "Навигация",
+            support: "Техникалық қолдау",
+            social: "Соц сетиӘлеуметтік желілер",
+            qrText: "QR Code\nЖазылыңыз!",
+            links: [
+                { label: "Калькулятор", url: "/calculator" },
+                { label: "Біз туралы", url: "/about" },
+                { label: "Біздің қызметтеріміз", url: "/services" },
+                { label: "Пікірлер", url: "/reviews" },
+            ],
+            supportContacts: [
+                "+7 (707) 777 77 77",
+                "+7 (707) 777 77 77",
+                "+7 (707) 777 77 77",
+            ],
+            socialContacts: [
+                { icon: PhoneNumberIcon, label: "+7 (707) 777 77 77", url: "tel:+77077777777" },
+                { icon: WhatsAppIcon, label: "+7 (707) 777 77 77", url: "https://wa.me/77077777777" },
+                { icon: InstagramIcon, label: "@cargo525", url: "https://instagram.com/cargo525" },
+                { icon: TikTokIcon, label: "@cargo525", url: "https://tiktok.com/@cargo525" },
+            ],
+        },
+        ch: {
+            navigation: "导航",
+            support: "技术支持",
+            social: "社交媒体",
+            qrText: "QR 码\n订阅我们！",
+            links: [
+                { label: "计算器", url: "/calculator" },
+                { label: "关于我们", url: "/about" },
+                { label: "我们的服务", url: "/services" },
+                { label: "评论", url: "/reviews" },
+            ],
+            supportContacts: [
+                "+7 (707) 777 77 77",
+                "+7 (707) 777 77 77",
+                "+7 (707) 777 77 77",
+            ],
+            socialContacts: [
+                { icon: PhoneNumberIcon, label: "+7 (707) 777 77 77", url: "tel:+77077777777" },
+                { icon: WhatsAppIcon, label: "+7 (707) 777 77 77", url: "https://wa.me/77077777777" },
+                { icon: InstagramIcon, label: "@cargo525", url: "https://instagram.com/cargo525" },
+                { icon: TikTokIcon, label: "@cargo525", url: "https://tiktok.com/@cargo525" },
+            ],
+        },
     };
 
     const translation = translations[lg] || translations["ru"];

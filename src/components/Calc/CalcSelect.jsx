@@ -6,7 +6,7 @@ export default function CalcSelect(props) {
             <select 
                 className="border border-[#E0E0E0] rounded-[5px] px-3 py-1.5 w-full mt-1"
                 onChange={(event) => {
-                    props.onHandleChange(props.event.target.value)
+                    props.onHandleChange(props.name, event.target.value)
                 }}
             >
                 {props.cities.map((item, index) => {

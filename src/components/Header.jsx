@@ -35,6 +35,7 @@ export default function Header(props) {
                                 {props.lg === "ru" && "Ежедневно с 9:00 до 20:00"}
                                 {props.lg === "kz" && "Күн сайын 9:00-ден 20:00-ге дейін"}
                                 {props.lg === "en" && "Daily from 9:00 to 20:00"}
+                                {props.lg === "ch" && "每天9:00至20:00"}
                             </div>
                         </div>
                     </div>
@@ -51,6 +52,7 @@ export default function Header(props) {
                             <option value="ru">ru</option>
                             <option value="kz">kz</option>
                             <option value="en">en</option>
+                            <option value="ch">ch</option>
                         </select>
                 </div>
                 <div className="flex flex-col md:flex-row mt-6 lg:mt-[27px]">
@@ -59,11 +61,13 @@ export default function Header(props) {
                             {props.lg === "ru" && "Грузоперевозки из Китая в Казахстан, Россию и ОАЭ"}
                             {props.lg === "kz" && "Қытайдан Қазақстанға, Ресейге және БАӘ-ге жүк тасымалдау"}
                             {props.lg === "en" && "Cargo transportation from China to Kazakhstan, Russia and UAE"}
+                            {props.lg === "ch" && "从中国到哈萨克斯坦、俄罗斯和阿联酋的货物运输"}
                         </p>
                         <p className="text-[13px] lg:text-[20px] text-[#2E363E] md:w-[75%] mt-1.5 ">
                             {props.lg === "ru" && "Некий подзаголовок для более подробного раскрытия заголовка"}
                             {props.lg === "kz" && "Тақырыпты одан әрі кеңейту үшін қосалқы тақырып"}
                             {props.lg === "en" && "A subheading to further expand on the title"}
+                            {props.lg === "ch" && "进一步扩展标题的副标题"}
                         </p>
                     </div>
                     

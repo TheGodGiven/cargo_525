@@ -18,40 +18,51 @@ const flags = {
 
 const countries = {
     ru: [
-        { value: "Казахстан", label: "Казахстан", flag: flags.kz, city: "Астана Алматы" },
-        { value: "Китай", label: "Китай", flag: flags.chn, city: "Пекин Шанхай" },
-        { value: "ОАЭ", label: "ОАЭ", flag: flags.uae, city: "Дубай Абу-Даби" },
-        { value: "Россия", label: "Россия", flag: flags.ru, city: "Москва Санкт-Петербург" },
+        { value: "Казахстан", label: "Казахстан", flag: flags.kz, city: "Алматы, Астана, Караганда" },
+        { value: "Китай", label: "Китай", flag: flags.chn, city: "Иу, Гуанчжоу, Шэньчжэнь" },
+        { value: "ОАЭ", label: "ОАЭ", flag: flags.uae, city: "Дубай" },
+        { value: "Россия", label: "Россия", flag: flags.ru, city: "Москва" },
     ],
     kz: [
-        { value: "Казахстан", label: "Қазақстан", flag: flags.kz, city: "Астана Алматы" },
-        { value: "Китай", label: "Қытай", flag: flags.chn, city: "Бейжің Шанхай" },
-        { value: "ОАЭ", label: "БАӘ", flag: flags.uae, city: "Дубай Абу-Даби" },
-        { value: "Россия", label: "Ресей", flag: flags.ru, city: "Мәскеу Санкт-Петербург" },
+        { value: "Казахстан", label: "Қазақстан", flag: flags.kz, city: "Алматы, Астана, Қарағанды" },
+        { value: "Китай", label: "Қытай", flag: flags.chn, city: "Иу, Гуанчжоу, Шэньчжэнь" },
+        { value: "ОАЭ", label: "БАӘ", flag: flags.uae, city: "Дубай" },
+        { value: "Россия", label: "Ресей", flag: flags.ru, city: "Мәскеу" },
     ],
     en: [
-        { value: "Казахстан", label: "Kazakhstan", flag: flags.kz, city: "Astana Almaty" },
-        { value: "Китай", label: "China", flag: flags.chn, city: "Beijing Shanghai" },
-        { value: "ОАЭ", label: "UAE", flag: flags.uae, city: "Dubai Abu Dhabi" },
-        { value: "Россия", label: "Russia", flag: flags.ru, city: "Moscow Saint Petersburg" },
+        { value: "Казахстан", label: "Kazakhstan", flag: flags.kz, city: "Almaty, Astana, Karaganda" },
+        { value: "Китай", label: "China", flag: flags.chn, city: "Yiwu, Guangzhou, Shenzhen" },
+        { value: "ОАЭ", label: "UAE", flag: flags.uae, city: "Dubai" },
+        { value: "Россия", label: "Russia", flag: flags.ru, city: "Moscow" },
+    ],
+    ch: [
+        { value: "Казахстан", label: "哈萨克斯坦", flag: flags.kz, city: "阿拉木图、阿斯塔纳、卡拉干达" },
+        { value: "Китай", label: "中国", flag: flags.chn, city: "义乌、广州、深圳" },
+        { value: "ОАЭ", label: "阿联酋", flag: flags.uae, city: "迪拜" },
+        { value: "Россия", label: "俄罗斯", flag: flags.ru, city: "莫斯科" },
     ],
 };
 
 const translations = {
     ru: {
-        title: "Склады в четырех странах и восьми городах",
+        title: "У нас собственные склады в четырёх странах и восьми городах:",
         description:
-            "Это даёт нам полный контроль над логистикой и позволяет обеспечивать клиентам быстрый, прозрачный и надёжный сервис.",
+            "Бұл бізге логистиканы толық бақылауда ұстауға мүмкіндік береді және клиенттерімізге жедел, ашық әрі сенімді қызмет көрсетуді қамтамасыз етеді.",
     },
     kz: {
-        title: "Төрт елде және сегіз қалада қоймалар",
+        title: "Бізде төрт ел мен сегіз қалада өз қоймаларымыз бар:",
         description:
-            "Бұл бізге логистиканы толық бақылауға алуға және клиенттерге жылдам, ашық және сенімді қызмет көрсетуге мүмкіндік береді.",
+            "Бұл бізге логистиканы толық бақылауда ұстауға мүмкіндік береді және клиенттерімізге жедел, ашық әрі сенімді қызмет көрсетуді қамтамасыз етеді.",
     },
     en: {
-        title: "Warehouses in four countries and eight cities",
+        title: "We operate our own warehouses in four countries and eight cities:",
         description:
-            "This gives us full control over logistics and allows us to provide customers with fast, transparent, and reliable service.",
+            "This gives us full control over logistics and allows us to offer fast, transparent, and reliable service to our clients.",
+    },
+    ch: {
+        title: "我们在四个国家、八座城市拥有自有仓库：",
+        description:
+            "这使我们能够对整个物流过程进行全方位掌控，为客户提供快速、透明、可靠的服务。",
     },
 };
 
