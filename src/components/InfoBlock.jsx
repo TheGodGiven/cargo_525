@@ -17,17 +17,8 @@ export default function InfoBlock(props) {
                         {props.lg === "kz" && "2005 жылдан бері біз бизнесті Қытайдан тұрақты және тиімді жеткізілімдерді ұйымдастыруға көмектесеміз. Өз инфрақұрылымымыздың, кәсіби команда мен логистика жүйесінің арқасында біз жүктің қоймада қабылдануынан бастап, оны алушыға беруіне дейінгі барлық жеткізу кезеңдерін өзіміз аламыз."}
                         {props.lg === "en" && "Since 2005, we have been helping businesses organize stable and profitable deliveries from China. Thanks to our own infrastructure, professional team and established logistics system, we take on all stages of delivery: from receiving the cargo at the warehouse to handing it over to the recipient."}
                     </div>
-                    <div>
-                        <button>
-                            <a href="tel:+77272625252" className="text-[15px] text-[#911D16] font-semibold mt-[20px]">
-                                {props.lg === "ru" && "<Бесплатная консультация"}
-                                {props.lg === "kz" && "Тегін кеңес алу"}
-                                {props.lg === "en" && "Free consultation"}
-                            </a>
-                        </button>
-                    </div>
-                </div >
-                <div>
+                </div>
+                <div className="flex justify-end">
                     <img src={RedContainer} alt="RedContainer" className="w-2/3"/>
                 </div>
             </div>
