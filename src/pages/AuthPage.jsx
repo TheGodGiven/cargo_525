@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
-
+import api from '../api';
+import { useNavigate } from 'react-router-dom';
 export default function AuthPage() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        email: '',
+        name: '',
         password: ''
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Здесь будет логика авторизации
-        console.log('Form submitted:', formData);
+        api.post("/login", formData)
+        .then((res) => {
+            localStorage.setItem("token", res.data.token);
+            navigate("/admin");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     };
 
     const handleChange = (e) => {
@@ -33,17 +41,17 @@ export default function AuthPage() {
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                     <div className="rounded-md shadow-sm space-y-4">
                         <div>
-                            <label htmlFor="email" className="sr-only">
-                                Email
+                            <label htmlFor="name" className="sr-only">
+                                Имя
                             </label>
                             <input
-                                id="email"
-                                name="email"
-                                type="email"
+                                id="name"
+                                name="name"
+                                type="text"
                                 required
                                 className="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#911D16] focus:border-[#911D16] focus:z-10 sm:text-sm transition-all duration-200"
-                                placeholder="Email"
-                                value={formData.email}
+                                placeholder="Имя"
+                                value={formData.name}
                                 onChange={handleChange}
                             />
                         </div>
