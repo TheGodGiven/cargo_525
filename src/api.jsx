@@ -17,8 +17,12 @@ api.interceptors.response.use(
     (response) => response,
     (error) => {
         if (error.response && error.response.status === 403) {
-            localStorage.removeItem("token");
-            window.location.href = "/login"; // Перенаправление на страницу логина
+            const currentPath = window.location.pathname;
+            // Перенаправляем на страницу входа только если мы не на главной странице
+            if (currentPath !== "/" && currentPath !== "/login") {
+                localStorage.removeItem("token");
+                window.location.href = "/login";
+            }
         }
         return Promise.reject(error);
     }

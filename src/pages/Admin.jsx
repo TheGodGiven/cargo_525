@@ -43,10 +43,14 @@ export default function Admin() {
     };
 
     useEffect(() => {
-        api.get("/getUser")
-            .then((res) => setUser(res.data))
-            .catch(() => navigate("/login"));
-
+        const token = localStorage.getItem("token");
+        if (token) {
+            api.get("/getUser")
+                .then((res) => setUser(res.data))
+                .catch(() => navigate("/login"));
+        } else {
+            navigate("/login");
+        }
         getPrice();
         getReviews();
     }, []);
