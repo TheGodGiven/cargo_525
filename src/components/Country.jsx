@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import KZFLag from "../assets/KZFlag.png";
-import RUFlag from "../assets/RUFlag.png";
-import CHNFlag from "../assets/CHNFLag.png";
+import RUFlag from "../assets/RUFLag.png";
+import CHNFlag from "../assets/CHNFlag.png";
 import UAEFlag from "../assets/UAEFlag.png";
 import CountryBG from "../assets/CountryBG.png";
 
