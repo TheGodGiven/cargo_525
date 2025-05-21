@@ -6,13 +6,13 @@ export default function Footer() {
         <footer className="bg-black text-white py-8 px-4">
             <div className="flex flex-col items-center justify-center gap-4">
                 <div className="flex gap-6 mb-2">
-                    <a href="https://wa.me/77077777777" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                    <a href="https://wa.me/77079988525" target="_blank" rel="noopener noreferrer" title="WhatsApp">
                         <FaWhatsapp className="w-8 h-8 hover:scale-110 transition-transform" />
                     </a>
-                    <a href="https://instagram.com/cargo525" target="_blank" rel="noopener noreferrer" title="Instagram">
+                    <a href="https://www.instagram.com/cargo525.kz/" target="_blank" rel="noopener noreferrer" title="Instagram">
                         <FaInstagram className="w-8 h-8 hover:scale-110 transition-transform" />
                     </a>
-                    <a href="https://tiktok.com/@cargo525" target="_blank" rel="noopener noreferrer" title="TikTok">
+                    <a href="https://www.tiktok.com/@cargo_525?_t=8pBcCebHWBJ&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAafahlphumaclZAps3Zz8204i3C8BabSfZrCD7Z_nUMEaJcLzYF_sWy-3dLJ6g_aem_rZxFiUBy40lu1wAlHww_gg" target="_blank" rel="noopener noreferrer" title="TikTok">
                         <FaTiktok className="w-8 h-8 hover:scale-110 transition-transform" />
                     </a>
                     <a href="https://t.me/kargo525" target="_blank" rel="noopener noreferrer" title="Telegram">

@@ -40,7 +40,9 @@ export default function Home() {
                         }
                     </div>
                     <button className="bg-[#26c85f] px-14 py-3 text-lg font-medium text-white rounded-lg mt-5 hover:cursor-pointer">
-                        {lang === "ru" ? "Связаться с менеджером" : lang === "kz" ? "Менеджерге хабарласу" : lang === "en" ? "Contact with manager" : "联系管理员"}
+                        <a href="https://wa.me/77079988525">
+                            {lang === "ru" ? "Связаться с менеджером" : lang === "kz" ? "Менеджерге хабарласу" : lang === "en" ? "Contact with manager" : "联系管理员"}
+                        </a>
                     </button>
                 </div>    
             </div>}

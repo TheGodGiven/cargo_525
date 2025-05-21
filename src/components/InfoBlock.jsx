@@ -25,7 +25,7 @@ export default function InfoBlock(props) {
                 </div>
                 <div className="mt-4">
                     <button className="w-full flex justify-center items-center bg-[#2F7FDE] rounded-[5px] px-[20px] py-[10px] mt-[10px]">
-                        <a href="tel:+77272625252" className="text-[14px] text-[#FFF3F3] font-medium ">
+                        <a href="https://wa.me/77079988525" className="text-[14px] text-[#FFF3F3] font-medium ">
                             {props.lg === "ru" && "Бесплатная консультация"}
                             {props.lg === "kz" && "Тегін кеңес алу"}
                             {props.lg === "en" && "Free consultation"}
@@ -51,7 +51,7 @@ export default function InfoBlock(props) {
                     </div>
                     <div className="mt-[35px]">
                         <button className="flex justify-center items-center bg-[#2F7FDE] rounded-[5px] px-[40px] py-[20px] mt-[20px]">
-                            <a href="tel:+77272625252" className="text-[18px] text-[#FFF3F3] font-medium ">
+                            <a href="https://wa.me/77079988525" className="text-[18px] text-[#FFF3F3] font-medium ">
                                 {props.lg === "ru" && "Бесплатная консультация"}
                                 {props.lg === "kz" && "Тегін кеңес алу"}
                                 {props.lg === "en" && "Free consultation"}

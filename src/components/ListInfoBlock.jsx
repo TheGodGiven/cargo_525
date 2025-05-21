@@ -77,7 +77,7 @@ export default function ListInfoBlock(props) {
                     {translation.items.map((item, index) => (
                         <div key={index} className="flex items-center gap-4">
                             <span className="text-[#911D16] font-bold text-[36px]">{index + 1}</span>
-                            <p className="text-[18px] text-gray-700">{item}</p>
+                            <p className="text-[18px] text-gray-700 whitespace-pre-line">{item}</p>
                         </div>
                     ))}
                 </div>
@@ -97,7 +97,7 @@ export default function ListInfoBlock(props) {
                     {translation.items.map((item, index) => (
                         <li key={index} className="flex items-start gap-2">
                             <span className="text-[#911D16] font-bold text-[24px] items-center">{index + 1}</span>
-                            <p className="text-[16px] text-gray-700">{item}</p>
+                            <p className="text-[16px] text-gray-700 whitespace-pre-line">{item}</p>
                         </li>
                     ))}
                 </ul>

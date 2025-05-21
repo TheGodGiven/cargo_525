@@ -22,15 +22,15 @@ export default function Header(props) {
                     <div className="hidden lg:block">
                         <img src={Logo} alt="logo" className="w-[190px] h-[19px]"/>
                     </div>
-                    <div className="flex items-center gap-x-4">
+                    <div className="flex items-center gap-x-4 hover:cursor-pointer">
                         <div>
                             <img src={Phone} alt="Phone" className="w-5 h-5 lg:w-6 lg:h-6" />
                         </div>
 
                         <div>
-                            <div className="text-[#FFF3F3] font-bold">
-                                8 (777) 774-77-77
-                            </div>
+                            <a href="tel:+77079988525" className="text-[#FFF3F3] font-bold hover:text-white transition-colors duration-200">
+                                8 (707) 998-85-25
+                            </a>
                             <div className="text-[#FFF3F3] text-[10px]">
                                 {props.lg === "ru" && "Ежедневно с 9:00 до 20:00"}
                                 {props.lg === "kz" && "Күн сайын 9:00-ден 20:00-ге дейін"}

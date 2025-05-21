@@ -24,15 +24,15 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/addReview", checkAuth, addReview);
-app.get("/getReviews", checkAuth, getReviews);
+app.get("/getReviews", getReviews);
 app.delete("/deleteReview/:id", checkAuth, deleteReview);
 app.put("/updateReview/:id", checkAuth, updateReview)
 
 app.post("/addPrice", checkAuth, addPrice);
-app.get("/getPrice", checkAuth, getPrice);
+app.get("/getPrice", getPrice);
 app.put("/updatePrice", checkAuth, updatePrice);
 
-app.post("/addUser", addUser);
+app.post("/addUser", checkAuth, addUser);
 app.post("/login", login);
 app.get("/getUser", checkAuth, getUser);
 

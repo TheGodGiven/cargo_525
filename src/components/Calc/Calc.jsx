@@ -307,7 +307,9 @@ export default function Calc(props) {
 
                         <div className="flex justify-center">
                             <button className="bg-[#26c85f] px-14 py-3 font-medium text-white rounded-lg mt-5">
-                                {props.lg === "ru" ? "Связаться с менеджером" : props.lg === "kz" ? "Менеджерге хабарласу" : props.lg === "en" ? "Contact with manager" : "联系管理员"}
+                                <a href="https://wa.me/77079988525">
+                                    {props.lg === "ru" ? "Связаться с менеджером" : props.lg === "kz" ? "Менеджерге хабарласу" : props.lg === "en" ? "Contact with manager" : "联系管理员"}
+                                </a>
                             </button>
                         </div>
                     </div>
@@ -449,7 +451,9 @@ export default function Calc(props) {
 
                         <div className="flex justify-between">
                             <button className="bg-[#26c85f] px-14 py-3 text-lg font-medium text-white rounded-lg mt-5">
-                                {props.lg === "ru" ? "Связаться с менеджером" : props.lg === "kz" ? "Менеджерге хабарласу" : props.lg === "en" ? "Contact with manager" : "联系管理员"}
+                                <a href="https://wa.me/77079988525">
+                                    {props.lg === "ru" ? "Связаться с менеджером" : props.lg === "kz" ? "Менеджерге хабарласу" : props.lg === "en" ? "Contact with manager" : "联系管理员"}
+                                </a>
                             </button>
                             <button onClick={calculate} className="bg-[#2F7FDE] px-14 py-3 text-lg font-medium text-white rounded-lg mt-5">
                                 {translation.calculate}
