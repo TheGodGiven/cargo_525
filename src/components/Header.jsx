@@ -64,10 +64,10 @@ export default function Header(props) {
                             {props.lg === "ch" && "从中国到哈萨克斯坦、俄罗斯和阿联酋的货物运输"}
                         </p>
                         <p className="text-[13px] lg:text-[20px] text-[#2E363E] md:w-[75%] mt-1.5 ">
-                            {props.lg === "ru" && "Некий подзаголовок для более подробного раскрытия заголовка"}
-                            {props.lg === "kz" && "Тақырыпты одан әрі кеңейту үшін қосалқы тақырып"}
-                            {props.lg === "en" && "A subheading to further expand on the title"}
-                            {props.lg === "ch" && "进一步扩展标题的副标题"}
+                            {props.lg === "ru" && "Вы ищете логистику, которой можно доверять?\nДобро пожаловать в Cargo525."}
+                            {props.lg === "kz" && "Сенуге болатын логистиканы іздеп жүрсіз бе?\nCargo525-ке қош келдіңіз."}
+                            {props.lg === "en" && "Are you looking for logistics you can trust?\nWelcome to Cargo525."}
+                            {props.lg === "ch" && "您在寻找值得信赖的物流吗？\n欢迎来到 Cargo525。"}
                         </p>
                     </div>
                     

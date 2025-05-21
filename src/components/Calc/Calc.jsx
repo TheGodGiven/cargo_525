@@ -47,6 +47,11 @@ export default function Calc(props) {
             auto: "Авто",
             autoDescription: "(до 15 дней от 20 кг)",
             productType: "Тип товара",
+            resultKg: "Цена за 1 кг:",
+            resultCube: "Цена за куб:",
+            resultDensity: "Плотность:",
+            resultDefault: "Стоимость доставки без упаковки*:",
+            resultSimple: "Стоимость доставки с простой упаковкой:",
         },
         en: {
             title: "CALCULATE THE COST\nOF CARGO TRANSPORTATION",
@@ -66,6 +71,11 @@ export default function Calc(props) {
             auto: "Auto",
             autoDescription: "(up to 15 days from 20 kg)",
             productType: "Product type",
+            resultKg: "Price per 1 kg:",
+            resultCube: "Price per cubic meter:",
+            resultDensity: "Density:",
+            resultDefault: "Delivery cost without packaging*:",
+            resultSimple: "Delivery cost with simple packaging:",
         },
         kz: {
             title: "ЖҮК ТАСЫМАЛДАРЫНЫҢ\nҚҰНЫН ЕСЕПТЕУ",
@@ -85,6 +95,11 @@ export default function Calc(props) {
             auto: "Авто",
             autoDescription: "(20 кг-нан 15 күнге дейін)",
             productType: "Тауар түрі",
+            resultKg: "1 кг үшін баға:",
+            resultCube: "Куб үшін баға:",
+            resultDensity: "Тығыздық:",
+            resultDefault: "Қаптамасыз жеткізу құны*:",
+            resultSimple: "Қарапайым қаптамамен жеткізу құны:",
         },
         ch: {
             title: "计算货物运输的费用",
@@ -104,6 +119,11 @@ export default function Calc(props) {
             auto: "汽车",
             autoDescription: "(20公斤起最多15天)",
             productType: "产品类型",
+            resultKg: "每公斤价格：",
+            resultCube: "每立方米价格：",
+            resultDensity: "密度：",
+            resultDefault: "不含包装的运费*：",
+            resultSimple: "含普通包装的运费：",
         },
     };
 
@@ -251,35 +271,6 @@ export default function Calc(props) {
                             name="volume"
                         />
 
-                        {/* <div className="flex items-center justify-center gap-x-3">
-                            <button
-                                className={clsx(
-                                    "px-8 py-2.5 max-w-max text-lg text-center mt-5 rounded-lg border border-[#E0E0E0]",
-                                    {
-                                        "bg-[#911D16] text-white": form.postType,
-                                    }
-                                )}
-                                onClick={() => {
-                                    setModal(true);
-                                }}
-                            >
-                                {translation.train}
-                            </button>
-
-                            <button
-                                className={clsx(
-                                    "px-8 py-2.5 max-w-max text-lg text-center mt-5 rounded-lg border border-[#E0E0E0]",
-                                    {
-                                        "bg-[#911D16] text-white": !form.postType,
-                                    }
-                                )}
-                                onClick={() => {
-                                }}
-                            >
-                                {translation.auto}
-                            </button>
-                        </div> */}
-
                         <div className="flex justify-center">
                             <button onClick={calculate} className="bg-[#2F7FDE] px-14 py-3 text-lg font-medium text-white rounded-lg mt-5">
                                 {translation.calculate}
@@ -288,27 +279,27 @@ export default function Calc(props) {
 
                         {sum !== null && <div className="mt-2">
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Цена за 1 кг: </div>
+                                <div>{translation.resultKg}</div>
                                 <div>{sum.kgPrice}$</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Цена за куб:</div>
+                                <div>{translation.resultCube}</div>
                                 <div>{sum.kubePrice}$</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Плотность:</div>
+                                <div>{translation.resultDensity}</div>
                                 <div>{sum.density}п</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Стоимость доставки без упаковки*:</div>
+                                <div>{translation.resultDefault}</div>
                                 <div>{sum.defaultPrice}$</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Стоимость доставки с простой упаковкой:</div>
+                                <div>{translation.resultSimple}</div>
                                 <div>{sum.simplePrice}$</div>
                             </div>
                         </div>
@@ -467,27 +458,27 @@ export default function Calc(props) {
 
                         {sum !== null && <div className="mt-3 w-[40%] ml-auto">
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Цена за 1 кг: </div>
+                                <div>{translation.resultKg}</div>
                                 <div>{sum.kgPrice}$</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Цена за куб:</div>
+                                <div>{translation.resultCube}</div>
                                 <div>{sum.kubePrice}$</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Плотность:</div>
+                                <div>{translation.resultDensity}</div>
                                 <div>{sum.density}п</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Стоимость доставки без упаковки*:</div>
+                                <div>{translation.resultDefault}</div>
                                 <div>{sum.defaultPrice}$</div>
                             </div>
 
                             <div className="flex items-start justify-between gap-x-2">
-                                <div>Стоимость доставки с простой упаковкой:</div>
+                                <div>{translation.resultSimple}</div>
                                 <div>{sum.simplePrice}$</div>
                             </div>
                         </div>
