@@ -25,3 +25,35 @@ api.interceptors.response.use(
 );
 
 export default api;
+
+// server {
+//     server_name cargo525.com www.cargo525.com;
+
+
+//     location / {
+//         root /var/www/cargo;
+//         index  index.html index.htm;
+//         proxy_http_version 1.1;
+//         proxy_set_header Upgrade $http_upgrade;
+//         proxy_set_header Connection 'upgrade';
+//         proxy_set_header Host $host;
+//         proxy_cache_bypass $http_upgrade;
+//         try_files $uri $uri/ /index.html;
+//     }
+// }
+   
+   
+// server {
+//     server_name api.cargo525.com;
+
+
+//     location / {
+//         proxy_pass http://77.243.80.126:5025;
+//         proxy_http_version 1.1;
+//         proxy_set_header Upgrade $http_upgrade;
+//         proxy_set_header Connection 'upgrade';
+//         proxy_set_header Host $host;
+//         proxy_cache_bypass $http_upgrade;
+//     }
+// }
+   
