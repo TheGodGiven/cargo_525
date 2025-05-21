@@ -68,7 +68,7 @@ export default function CommentBlock({ lg = "ru" }) {
         touchEndX.current = null;
     };
 
-    if (comments.length === 0) return <div className="text-center md:text-xl font-medium">{lg === "ru" ? "Отзывов нет" : lg === "en" ? "No reviews" : lg === "kz" ? "Пікірлер жоқ" : "没有评论"}</div>;
+    if (comments.length === 0) return <div className="text-center md:text-xl font-medium pb-5 md:pb-10">{lg === "ru" ? "Отзывов нет" : lg === "en" ? "No reviews" : lg === "kz" ? "Пікірлер жоқ" : "没有评论"}</div>;
 
     return (
         <div className="bg-white px-4 py-8 relative text-center max-w-[600px] mx-auto">

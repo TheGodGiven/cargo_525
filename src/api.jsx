@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:5025",
+    baseURL: "https://api.cargo525.com",
     timeout: 1000 * 30,
     headers: {
         "X-Requested-With": "XMLHttpRequest",

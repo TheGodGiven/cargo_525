@@ -40,20 +40,23 @@ export default function Header(props) {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-end mt-[10px]"> 
-                        <select 
-                            name="lang" 
-                            id="" 
-                            className="border border-[#E0E0E0] rounded-[5px] px-3 py-1.5 max-w-max mt-1 bg-white"
-                            onChange={(event) => {
-                                props.change(event.target.value)
-                            }}
-                        >
-                            <option value="ru">ru</option>
-                            <option value="kz">kz</option>
-                            <option value="en">en</option>
-                            <option value="ch">ch</option>
-                        </select>
+                <div className="flex justify-end mt-[10px] items-center gap-2"> 
+                    {/* Globe Icon */}
+                    <svg className="w-5 h-5 text-[#911D16]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" strokeWidth="2"/></svg>
+                    <select 
+                        name="lang" 
+                        id="" 
+                        className="border border-[#911D16] rounded-full px-4 py-2 max-w-max mt-1 bg-white shadow-md text-[#911D16] font-semibold focus:outline-none focus:ring-2 focus:ring-[#911D16]/40 transition-all duration-200 hover:border-[#c0392b]"
+                        onChange={(event) => {
+                            props.change(event.target.value)
+                        }}
+                        value={props.lg}
+                    >
+                        <option value="ru">Русский</option>
+                        <option value="kz">Қазақша</option>
+                        <option value="en">English</option>
+                        <option value="ch">中文</option>
+                    </select>
                 </div>
                 <div className="flex flex-col md:flex-row mt-6 lg:mt-[27px]">
                     <div className="md:w-1/2">
