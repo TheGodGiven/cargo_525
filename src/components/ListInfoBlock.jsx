@@ -95,7 +95,7 @@ export default function ListInfoBlock(props) {
                 </h2>
                 <ul className="flex flex-col gap-4">
                     {translation.items.map((item, index) => (
-                        <li key={index} className="flex items-center gap-2">
+                        <li key={index} className="flex items-start gap-2">
                             <span className="text-[#911D16] font-bold text-[24px] items-center">{index + 1}</span>
                             <p className="text-[16px] text-gray-700">{item}</p>
                         </li>

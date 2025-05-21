@@ -20,8 +20,18 @@ export default function InfoBlock(props) {
                         {props.lg === "ch" && "自2005年以来，我们致力于帮助企业组织来自中国的稳定且高效的货物运输。依托自有的基础设施、专业团队及完善的物流体系，我们全程负责货物运输的每一个环节——从仓库接收货物到最终交付收件人。"}
                     </div>
                 </div>
-                <div className="flex justify-end">
+                <div className="mt-4 flex justify-end">
                     <img src={RedContainer} alt="RedContainer" className="w-2/3"/>
+                </div>
+                <div className="mt-4">
+                    <button className="w-full flex justify-center items-center bg-[#2F7FDE] rounded-[5px] px-[20px] py-[10px] mt-[10px]">
+                        <a href="tel:+77272625252" className="text-[14px] text-[#FFF3F3] font-medium ">
+                            {props.lg === "ru" && "Бесплатная консультация"}
+                            {props.lg === "kz" && "Тегін кеңес алу"}
+                            {props.lg === "en" && "Free consultation"}
+                            {props.lg === "ch" && "免费咨询"}
+                        </a>
+                    </button>
                 </div>
             </div>
 
