@@ -77,7 +77,7 @@ export default function AuthPage() {
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-between">
+                    {/* <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <input
                                 id="remember-me"
@@ -95,7 +95,7 @@ export default function AuthPage() {
                                 Забыли пароль?
                             </a>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div>
                         <button
