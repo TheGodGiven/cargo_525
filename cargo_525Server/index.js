@@ -21,7 +21,11 @@ mongoose
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://cargo525.com",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 
 app.post("/addReview", checkAuth, addReview);
 app.get("/getReviews", getReviews);
