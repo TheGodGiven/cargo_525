@@ -78,26 +78,26 @@ export default function Calc(props) {
             resultSimple: "Delivery cost with simple packaging:",
         },
         kz: {
-            title: "ЖҮК ТАСЫМАЛДАРЫНЫҢ\nҚҰНЫН ЕСЕПТЕУ",
-            subtitle: "Біріктірілген жүктер мен жүкті басқарушы арқылы уақтылы ресімдемегені үшін жеткізу мерзімдері сақталмайды",
+            title: "ЖҮК ТАСЫМАЛДАУ ҚҰНЫН ЕСЕПТЕУ",
+            subtitle: "Құрама жүктер мен жүктің менеджер арқылы дер кезінде ресімделмеуі жағдайында, жеткізу мерзімі сақталмайды.",
             fromCity: "Қайдан (қала)*",
-            toCity: "Қайда (қала)*",
-            weight: "Салмағы (кг), минималды 100кг!*",
-            volume: "Көлем, м3*",
+            toCity: "Қай қалаға*",
+            weight: "Салмақ (кг) – ең аз салмақ 100 кг!*",
+            volume: "Көлемі, м³*",
             name: "Аты-жөні*",
             phone: "Телефон нөмірі*",
             length: "Ұзындығы, см*",
             width: "Ені, см*",
             height: "Биіктігі, см*",
-            sumofbox: "Қораптардың саны,",
+            sumofbox: "Қорап саны,",
             calculate: "Құнын есептеу",
             train: "ЖД",
             auto: "Авто",
-            autoDescription: "(20 кг-нан 15 күнге дейін)",
+            autoDescription: "(20 кг бастап, 15 күнге дейін)",
             productType: "Тауар түрі",
             resultKg: "1 кг үшін баға:",
-            resultCube: "Куб үшін баға:",
-            resultDensity: "Тығыздық:",
+            resultCube: "1 м³ үшін баға:",
+            resultDensity: "Тығыздығы:",
             resultDefault: "Қаптамасыз жеткізу құны*:",
             resultSimple: "Қарапайым қаптамамен жеткізу құны:",
         },
@@ -129,17 +129,51 @@ export default function Calc(props) {
 
     const translation = translations[props.lg] || translations["ru"];
 
-    const productTypes = [
-        { value: "product1", city: "Единый (хозяйственные товары)" },
-        { value: "product2", city: "Техника(мелкая бытовая, телефоны, компьютеры)" },
-        { value: "product3", city: "Одежда (текстиль, сумки)" },
-        { value: "product4", city: "Обувь" },
-    ];
+    const productTypes = {
+        ru: [
+            { value: "product1", city: "Единый (хозяйственные товары)" },
+            { value: "product2", city: "Техника(мелкая бытовая, телефоны, компьютеры)" },
+            { value: "product3", city: "Одежда (текстиль, сумки)" },
+            { value: "product4", city: "Обувь" },
+        ],
+        kz: [
+            { value: "product1", city: "Біріккен (шаруашылық тауарлары)" },
+            { value: "product2", city: "Техника (шағын тұрмыстық, телефондар, компьютерлер)" },
+            { value: "product3", city: "Киім (тоқыма, сөмкелер)" },
+            { value: "product4", city: "Аяқ киім" },
+        ],
+        en: [
+            { value: "product1", city: "Unified (household goods)" },
+            { value: "product2", city: "Electronics (small appliances, phones, computers)" },
+            { value: "product3", city: "Clothing (textiles, bags)" },
+            { value: "product4", city: "Footwear" },
+        ],
+        ch: [
+            { value: "product1", city: "统一（家居用品）" },
+            { value: "product2", city: "电子产品（小家电、手机、电脑）" },
+            { value: "product3", city: "服装（纺织品、包袋）" },
+            { value: "product4", city: "鞋类" },
+        ],
+    };
 
-    const toCities = [
-        { value: "ala", city: "Казахстан, Алматы" },
-        { value: "msc", city: "Россия, Москва" },
-    ];
+    const toCities = {
+        ru: [
+            { value: "ala", city: "Казахстан, Алматы" },
+            { value: "msc", city: "Россия, Москва" },
+        ],
+        kz: [
+            { value: "ala", city: "Қазақстан, Алматы" },
+            { value: "msc", city: "Ресей, Мәскеу" },
+        ],
+        en: [
+            { value: "ala", city: "Kazakhstan, Almaty" },
+            { value: "msc", city: "Russia, Moscow" },
+        ],
+        ch: [
+            { value: "ala", city: "哈萨克斯坦，阿拉木图" },
+            { value: "msc", city: "俄罗斯，莫斯科" },
+        ],
+    };
 
     const changeForm = (name, value) => {
         if (name === "width" || name === "height" || name === "length" || name === "sumofbox") {
@@ -218,13 +252,13 @@ export default function Calc(props) {
                         
                         <CalcSelect
                             title={translation.productType}
-                            cities={productTypes}
+                            cities={productTypes[props.lg] || productTypes.ru}
                             onHandleChange={changeForm}
                             name="productType"
                         />
                         <CalcSelect
                             title={translation.toCity}
-                            cities={toCities}
+                            cities={toCities[props.lg] || toCities.ru}
                             onHandleChange={changeForm}
                             name="to"
                         />
@@ -330,13 +364,13 @@ export default function Calc(props) {
                             <div className="w-1/2">
                                 <CalcSelect
                                     title={translation.productType}
-                                    cities={productTypes}
+                                    cities={productTypes[props.lg] || productTypes.ru}
                                     onHandleChange={changeForm}
                                     name="productType"
                                 />
                                 <CalcSelect
                                     title={translation.toCity}
-                                    cities={toCities}
+                                    cities={toCities[props.lg] || toCities.ru}
                                     onHandleChange={changeForm}
                                     name="to"
                                 />
