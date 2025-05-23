@@ -19,7 +19,7 @@ const emptyForm = {
 export default function Admin() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
-    const [tab, setTab] = useState("price");
+    const [tab, setTab] = useState("reviews");
     const [priceValue, setPriceValue] = useState(0);
     const [reviews, setReviews] = useState([]);
     const [editReview, setEditReview] = useState(null);
@@ -152,12 +152,12 @@ export default function Admin() {
     return (
         <div className="max-w-2xl mx-auto py-10">
             <div className="flex mb-8 border-b">
-                <button
+                {/* <button
                     className={`px-6 py-2 font-semibold ${tab === "price" ? "border-b-4 border-[#911D16] text-[#911D16]" : "text-gray-500"}`}
                     onClick={() => setTab("price")}
                 >
                     Цена за кг
-                </button>
+                </button> */}
                 <button
                     className={`px-6 py-2 font-semibold ${tab === "reviews" ? "border-b-4 border-[#911D16] text-[#911D16]" : "text-gray-500"}`}
                     onClick={() => setTab("reviews")}
