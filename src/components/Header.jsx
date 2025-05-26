@@ -3,10 +3,35 @@ import LogoMobile from "../assets/LogoMobile.png"
 import Phone from "../assets/Phone.png"
 import HeadPhotoMobile from "../assets/HeadPhotoMobile.png"
 import HeadPhoto from "../assets/HeadPhoto.png"
+import HeadPhotoImage1 from '../assets/HeadPhotoImage1.jpeg' 
+import HeadPhotoImage2 from '../assets/HeadPhotoImage2.jpeg'
+import HeadPhotoImage3 from '../assets/HeadPhotoImage3.jpeg'
+import HeadPhotoImage4 from '../assets/HeadPhotoImage4.jpeg'
+import HeadPhotoImage5 from '../assets/HeadPhotoImage5.jpeg'
+import HeadPhotoImage6 from '../assets/HeadPhotoImage6.jpeg'
 import BGHead from"../assets/BGHead.png"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+
+const sliderImages = [
+    HeadPhoto,
+    HeadPhotoImage1,
+    HeadPhotoImage2,
+    HeadPhotoImage3,
+    HeadPhotoImage4,
+    HeadPhotoImage5,
+    HeadPhotoImage6,
+];
 
 export default function Header(props) {
+
+    const [cuerrent, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrent((prev) => (prev + 1) % sliderImages[length]);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div style={{
@@ -75,7 +100,10 @@ export default function Header(props) {
                     </div>
                     
                     <div className="hidden md:block mt-14 lg:mt-[100px] w-1/2">
-                            <img src={HeadPhoto} alt="logo" className="w-[130%] max-w-[130%] -ml-[120px]"/>
+                            <img 
+                                src={sliderImages[current]} 
+                                alt="logo"
+                                className="w-[130%] max-w-[130%] -ml-[120px] border-1 border-gray-700/50 rounded-4xl"/>
                     </div>
                 </div>
             </div>
