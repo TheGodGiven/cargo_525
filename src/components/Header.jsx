@@ -60,12 +60,12 @@ export default function Header(props) {
                 </div>
                 <div className="flex flex-col md:flex-row mt-6 lg:mt-[27px]">
                     <div className="md:w-1/2">
-                        <p className="text-2xl lg:text-5xl text-[#911D16] font-bold md:w-[110%]">
-                            {props.lg === "ru" && "Грузоперевозки из Китая в Казахстан, Россию и ОАЭ"}
-                            {props.lg === "kz" && "Қытайдан Қазақстанға, Ресейге және БАӘ-ге жүк тасымалдау"}
-                            {props.lg === "en" && "Cargo transportation from China to Kazakhstan, Russia and UAE"}
+                        <h1 className="text-2xl lg:text-5xl text-[#911D16] font-bold md:w-[110%]">
+                            {props.lg === "ru" && "Карго из Китая в Казахстан, Россию и ОАЭ"}
+                            {props.lg === "kz" && "Қытайдан Қазақстанға, Ресейге және БАӘ-ге карго жеткізу"}
+                            {props.lg === "en" && "Cargo from China to Kazakhstan, Russia and UAE"}
                             {props.lg === "ch" && "从中国到哈萨克斯坦、俄罗斯和阿联酋的货物运输"}
-                        </p>
+                        </h1>
                         <p className="text-[13px] lg:text-[20px] text-[#2E363E] md:w-[75%] mt-1.5 ">
                             {props.lg === "ru" && "Вы ищете логистику, которой можно доверять?\nДобро пожаловать в Cargo525."}
                             {props.lg === "kz" && "Сенуге болатын логистиканы іздеп жүрсіз бе?\nCargo525-ке қош келдіңіз."}

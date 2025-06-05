@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /login/
-Disallow: /private/
+Disallow: /admin
+Disallow: /auth
 
 Sitemap: https://cargo525.com/sitemap.xml 

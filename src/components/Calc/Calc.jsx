@@ -351,12 +351,13 @@ export default function Calc(props) {
             </div>
             <div className="hidden md:block container mx-auto mt-10">
                 <div className="border border-[#E0E0E0] rounded-[19px] py-[30px] px-10 lg:py-[43px] lg:px-[80px] relative overflow-hidden">
-                    <div className="text-[#911D16] text-[21px] md:text-[30px] font-semibold">
-                        {translation.title}
-                    </div>
-
-                    <div className="mt-1 text-sm">
-                        {translation.subtitle}
+                    <div className="text-center">
+                        <h2 className="text-[24px] lg:text-[36px] text-[#911D16] font-bold whitespace-pre-line">
+                            {translation.title}
+                        </h2>
+                        <p className="text-[14px] lg:text-[16px] text-[#2E363E] mt-2">
+                            {translation.subtitle}
+                        </p>
                     </div>
 
                     <div className="">
